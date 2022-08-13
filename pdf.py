@@ -16,4 +16,8 @@ import PyPDF2
 with open('dummy.pdf', 'rb') as file:
     # print(file)
     reader = PyPDF2.PdfFileReader(file, strict=True)
-    print(reader.numPages)
+    # print(reader.numPages)
+    # print(reader.getPage(0))
+    first_page = reader.getPage(0)
+    print(first_page)
+    print(first_page.rotate(180))
