@@ -1,4 +1,4 @@
-from PyPDF2 import PdfReader
+import PyPDF2
 
 # --------------------------------------------------
 # reader = PdfReader('dummy.pdf')
@@ -13,4 +13,7 @@ from PyPDF2 import PdfReader
 # print(f'{meta.title=}')
 # --------------------------------------------------
 
-
+with open('dummy.pdf', 'rb') as file:
+    # print(file)
+    reader = PyPDF2.PdfFileReader(file, strict=True)
+    print(reader.numPages)
