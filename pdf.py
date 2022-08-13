@@ -19,5 +19,10 @@ with open('dummy.pdf', 'rb') as file:
     # print(reader.numPages)
     # print(reader.getPage(0))
     first_page = reader.getPage(0)
-    print(first_page)
-    print(first_page.rotate(180))
+    # print(first_page)
+    # print(first_page.rotate(180))
+    first_page.rotate(180)
+    writer = PyPDF2.PdfFileWriter()
+    writer.addPage(first_page)
+    with open('rotated.pdf', 'wb') as new_file:
+        writer.write(new_file)
